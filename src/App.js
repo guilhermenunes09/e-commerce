@@ -21,13 +21,15 @@ function App() {
 
   const handleDelete = (id) => {
     setItemToDelete(id);
-    
   }
 
   const confirmDelete = () => {
     axios.delete(`https://dummyjson.com/products/${itemToDelete}`)
       .then(({data}) => {
-        alert(`deleted`);
+        if(products && products.products) {
+          const productsItemRemoved = products.products.filter(item => item.id !== data.id);
+          setProducts({products: productsItemRemoved});
+        } 
       })
   }
 
