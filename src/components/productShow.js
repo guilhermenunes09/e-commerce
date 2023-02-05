@@ -20,11 +20,11 @@ const ProductShow = () => {
   }, []);
 
   return (
-    <div className="container my-5">
-      <h1 className="text-center">Product Show</h1>
-      <div className="card mx-auto" style={{width: '40rem'}}>
+    <div className="container my-5 ">
+      <h1 className="text-center">{product && product.title}</h1>
+      <div className="card mx-auto p-4" style={{width: '40rem'}}>
+        <img className='mx-auto' src={product.thumbnail} width={150} />
         <div className="card-body">
-          <h5 className="card-title">{product.title}</h5>
           <p className="card-text">{product.description}</p>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">Brand: {product.brand}</li>

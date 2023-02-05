@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 const Button = ({ to, children, className }) => (
@@ -21,6 +21,7 @@ const ProductEdit = () => {
   const [product, setProduct] = useState();
   const [formData, setFormData] = useState({});
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get(`https://dummyjson.com/products/${id}`)
@@ -43,6 +44,10 @@ const ProductEdit = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.put(`https://dummyjson.com/products/${id}`, {body: {...formData }})
+      .then(({data}) => {
+        alert(`${product.title} atualizado`);
+        navigate('/');
+      })
   }
 
   return (

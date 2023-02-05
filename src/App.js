@@ -45,7 +45,7 @@ function App() {
               Tem certeza que deseja deletar este item?
             </div>
             <div className="modal-footer justify-content-center">
-              <button onClick={confirmDelete} type="button" className="btn btn-primary" data-dismiss="modal">Sim</button>
+              <button onClick={confirmDelete} type="button" className="btn btn-danger" data-dismiss="modal">Sim</button>
               <button type="button" className="btn btn-secondary" data-dismiss="modal">Não</button>
             </div>
           </div>

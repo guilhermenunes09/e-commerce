@@ -16,8 +16,8 @@ const Product = ({ product, handleDelete }) => {
         <div className="d-flex justify-content-between align-items-center">
           <h5 className="card-title m-1">{product.title}</h5>
           <div>
-            <Button to={`/products/${product.id}`} className="btn m-1">Ver dados</Button>
-            <Button to={`/products/edit/${product.id}`} className="btn m-1">Alterar</Button>
+            <Link to={`/products/${product.id}`} className="btn btn-info m-1">Ver dados</Link>
+            <Link to={`/products/edit/${product.id}`} className="btn btn-info m-1">Alterar</Link>
             <button onClick={() => handleDelete(product.id)} data-toggle="modal" data-target="#exampleModal" className="btn m-1">Excluir</button>
           </div>
         </div>
